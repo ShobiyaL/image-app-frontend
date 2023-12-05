@@ -10,15 +10,17 @@ import ImagesList from './pages/ImagesList';
 
 function App() {
   const [token, setToken] = useState(sessionStorage.getItem('userToken'));
+  console.log(token);
   useEffect(() => {
     const token = sessionStorage.getItem('userToken');
+    console.log(token, 'inside useeffect');
     if (token) {
       setToken(token);
     } else {
       setToken('');
     }
   }, []);
-
+  console.log(token);
   return (
     <>
       <BrowserRouter>

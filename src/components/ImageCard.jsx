@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 const ImageCard = ({ image, token }) => {
+  console.log(token);
   // console.log(image);
   const [imageUrl, setImageUrl] = useState(null);
   let imgUrls = async () => {

@@ -5,14 +5,17 @@ import ImageCard from '../components/ImageCard';
 const ImagesList = ({ token }) => {
   const [images, setImages] = useState([]);
   const [imageUrl, setImageUrl] = useState([]);
-  // console.log(token);
+  console.log(token);
   let fetchImages = async () => {
-    const response = await axios.get('https://image-app-backend.onrender.com/api/images', {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
-    // console.log(response.data.data);
+    const response = await axios.get(
+      'https://image-app-backend.onrender.com/api/images',
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+    console.log(response.data.data);
     setImages([
       ...response.data.data.map((image) => {
         return {
