@@ -9,7 +9,7 @@ import Home from './pages/Home';
 import ImagesList from './pages/ImagesList';
 
 function App() {
-  const [token, setToken] = useState(sessionStorage.getItem('userToken') || '');
+  const [token, setToken] = useState(sessionStorage.getItem('userToken'));
   useEffect(() => {
     const token = sessionStorage.getItem('userToken');
     if (token) {
@@ -17,7 +17,7 @@ function App() {
     } else {
       setToken('');
     }
-  }, [token]);
+  }, []);
 
   return (
     <>

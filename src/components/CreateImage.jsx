@@ -5,6 +5,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 const CreateImage = ({ token }) => {
+  console.log(token);
   const [description, setDescription] = useState('');
   const [image, setImage] = useState([]);
   const [uploaded, setUploaded] = useState(false);
@@ -24,7 +25,7 @@ const CreateImage = ({ token }) => {
       const formData = new FormData();
       formData.append('file', image[0]);
       formData.append('description', description);
-
+      console.log(formData);
       const response = await axios.post(
         'https://image-app-backend.onrender.com/api/images/',
         formData,
@@ -34,7 +35,7 @@ const CreateImage = ({ token }) => {
           },
         }
       );
-      // console.log(response);
+      console.log(response);
       setDescription('');
       setImage([]);
       setIsLoading(false);
