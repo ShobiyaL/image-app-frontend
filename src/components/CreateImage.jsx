@@ -26,7 +26,7 @@ const CreateImage = ({ token }) => {
       formData.append('description', description);
 
       const response = await axios.post(
-        'http://localhost:8002/api/images/',
+        'https://image-app-backend.onrender.com/api/images/',
         formData,
         {
           headers: {

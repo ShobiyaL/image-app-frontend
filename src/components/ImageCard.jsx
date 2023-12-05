@@ -5,7 +5,7 @@ const ImageCard = ({ image, token }) => {
   const [imageUrl, setImageUrl] = useState(null);
   let imgUrls = async () => {
     const res = await axios.get(
-      `http://localhost:8002/api/image/${image.img}`,
+      `https://image-app-backend.onrender.com/api/image/${image.img}`,
       {
         header: {
           Authorzation: `Bearer ${token}`,

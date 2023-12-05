@@ -25,7 +25,7 @@ const Registration = () => {
     setIsLoading(true);
     try {
       const response = await axios.post(
-        'http://localhost:8002/api/users/register',
+        'https://image-app-backend.onrender.com/api/users/register',
         inputs
       );
       console.log(response, ' response check...register');

@@ -7,7 +7,7 @@ const ImagesList = ({ token }) => {
   const [imageUrl, setImageUrl] = useState([]);
   // console.log(token);
   let fetchImages = async () => {
-    const response = await axios.get('http://localhost:8002/api/images', {
+    const response = await axios.get('https://image-app-backend.onrender.com/api/images', {
       headers: {
         Authorization: `Bearer ${token}`,
       },

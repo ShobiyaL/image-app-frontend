@@ -18,7 +18,7 @@ const Login = () => {
     setIsLoading(true);
     try {
       const response = await axios.post(
-        'http://localhost:8002/api/users/login',
+        'https://image-app-backend.onrender.com/api/users/login',
         inputs
       );
       console.log(response, ' response check...register');
