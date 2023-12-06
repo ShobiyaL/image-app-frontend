@@ -11,7 +11,7 @@ const ImagesList = ({ token }) => {
       'https://image-app-backend.onrender.com/api/images',
       {
         headers: {
-          Authorization: `Bearer ${token}`,
+          Authorization: `Bearer ${sessionStorage.getItem('userToken')}`,
         },
       }
     );

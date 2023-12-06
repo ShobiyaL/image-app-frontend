@@ -31,7 +31,7 @@ const CreateImage = ({ token }) => {
         formData,
         {
           headers: {
-            Authorization: `Bearer ${token}`,
+            Authorization: `Bearer ${sessionStorage.getItem('userToken')}`,
           },
         }
       );
