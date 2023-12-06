@@ -16,10 +16,8 @@ function App() {
     console.log(token, 'inside useeffect');
     if (token) {
       setToken(token);
-    } else {
-      setToken('');
     }
-  }, []);
+  }, [token]);
   console.log(token);
   return (
     <>
