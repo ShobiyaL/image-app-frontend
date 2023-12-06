@@ -13,7 +13,7 @@ const ImageCard = ({ image, token }) => {
         },
       }
     );
-     console.log(res.data.image);
+    console.log(res.data.image);
 
     setImageUrl(res.data.image);
     return res;
@@ -27,7 +27,7 @@ const ImageCard = ({ image, token }) => {
     <div className='col'>
       <div className='card' style={{ width: '13rem' }}>
         <img
-          src={imageUrl || image.img}
+          src={`https://image-app-backend.onrender.com/api/image/${image.img}`}
           className='card-img-top'
           alt='...'
           style={{ width: '206px', height: '206px' }}
