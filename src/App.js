@@ -15,7 +15,7 @@ function App() {
     const storedToken = sessionStorage.getItem('userToken');
     setToken(storedToken);
     console.log(token, 'inside useeffect');
-  }, []);
+  }, [token]);
   console.log(token);
   return (
     <>
