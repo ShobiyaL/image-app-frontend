@@ -12,9 +12,19 @@ const CreateImage = ({ token }) => {
   const [isLoading, setIsLoading] = useState(false);
 
   const onDrop = useCallback((acceptedFiles) => {
+    console.log(acceptedFiles);
+    // const file = acceptedFiles[0];
+    // const reader = new FileReader();
+    // reader.onload = async () => {
+    //   setImage(reader.result.split(',')[1]);
+    //   console.log(reader.result.split(',')[1], '.....reader');
+    // };
+    // reader.readAsDataURL(file);
+
+    // console.log(file, 'file...');
     setImage(acceptedFiles);
   }, []);
-  console.log(image);
+  // console.log(image, 'image....fghjk');
   let handleChange = (event) => {
     setDescription(event.target.value);
   };
@@ -22,11 +32,14 @@ const CreateImage = ({ token }) => {
     event.preventDefault();
     setIsLoading(true);
     try {
+      console.log(image);
       const formData = new FormData();
+
       formData.append('image', image[0]);
       formData.append('description', description);
-      // console.log(formData);
+      console.log(formData, 'form data');
       const response = await axios.post(
+        // 'http://localhost:8002/api/images',
         'https://image-app-backend.onrender.com/api/images/',
         formData,
         {

@@ -28,6 +28,7 @@ const ImageCard = ({ image, token }) => {
       <div className='card' style={{ width: '13rem' }}>
         <img
           src={imageUrl}
+          // src={`data:image/jpeg;base64,${image.img}`}
           className='card-img-top'
           alt='...'
           style={{ width: '206px', height: '206px' }}
