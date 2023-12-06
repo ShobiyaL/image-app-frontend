@@ -9,15 +9,13 @@ import Home from './pages/Home';
 import ImagesList from './pages/ImagesList';
 
 function App() {
-  const [token, setToken] = useState(sessionStorage.getItem('userToken'));
+  const [token, setToken] = useState(null);
   console.log(token);
   useEffect(() => {
-    const token = sessionStorage.getItem('userToken');
+    const storedToken = sessionStorage.getItem('userToken');
+    setToken(storedToken);
     console.log(token, 'inside useeffect');
-    if (token) {
-      setToken(token);
-    }
-  }, [token]);
+  }, []);
   console.log(token);
   return (
     <>
