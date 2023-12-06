@@ -9,11 +9,11 @@ const ImageCard = ({ image, token }) => {
       `https://image-app-backend.onrender.com/api/image/${image.img}`,
       {
         header: {
-          Authorzation: `Bearer ${token}`,
+          Authorzation: `Bearer ${sessionStorage.getItem('userToken')}`,
         },
       }
     );
-    // console.log(res.data.image);
+     console.log(res.data.image);
 
     setImageUrl(res.data.image);
     return res;

@@ -20,7 +20,7 @@ const ImagesList = ({ token }) => {
       ...response.data.data.map((image) => {
         return {
           ...image,
-          url: `http://localhost:8002/api/images/${image.img}`,
+          url: `https://image-app-backend.onrender.com/api/images/${image.img}`,
         };
       }),
     ]);
