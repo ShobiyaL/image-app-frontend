@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 const ImageCard = ({ image, token }) => {
   console.log(token);
-  // console.log(image);
+  console.log(image, 'ImageCard');
   const [imageUrl, setImageUrl] = useState(null);
   let imgUrls = async () => {
     const res = await axios.get(
@@ -16,7 +16,7 @@ const ImageCard = ({ image, token }) => {
     console.log(res.data.image);
 
     setImageUrl(res.data.image);
-    return res;
+    // return res;
   };
 
   useEffect(() => {
@@ -27,7 +27,7 @@ const ImageCard = ({ image, token }) => {
     <div className='col'>
       <div className='card' style={{ width: '13rem' }}>
         <img
-          src={`https://image-app-backend.onrender.com/api/image/${image.img}`}
+          src={imageUrl}
           className='card-img-top'
           alt='...'
           style={{ width: '206px', height: '206px' }}

@@ -25,6 +25,7 @@ const ImagesList = ({ token }) => {
       }),
     ]);
   };
+  console.log(images);
   useEffect(() => {
     fetchImages();
   }, [token]);

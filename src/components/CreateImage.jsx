@@ -14,7 +14,7 @@ const CreateImage = ({ token }) => {
   const onDrop = useCallback((acceptedFiles) => {
     setImage(acceptedFiles);
   }, []);
-
+  console.log(image);
   let handleChange = (event) => {
     setDescription(event.target.value);
   };
@@ -23,7 +23,7 @@ const CreateImage = ({ token }) => {
     setIsLoading(true);
     try {
       const formData = new FormData();
-      formData.append('file', image[0]);
+      formData.append('image', image[0]);
       formData.append('description', description);
       // console.log(formData);
       const response = await axios.post(
