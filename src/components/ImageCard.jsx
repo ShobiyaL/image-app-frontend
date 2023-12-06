@@ -27,7 +27,7 @@ const ImageCard = ({ image, token }) => {
     <div className='col'>
       <div className='card' style={{ width: '13rem' }}>
         <img
-          src={imageUrl}
+          src={imageUrl || image.img}
           className='card-img-top'
           alt='...'
           style={{ width: '206px', height: '206px' }}
